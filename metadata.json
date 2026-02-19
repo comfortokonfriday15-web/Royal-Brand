@@ -1,0 +1,7 @@
+{
+  "name": "Robyn Brand Real Estate",
+  "description": "Luxury real estate landing page for Robyn Brand with 24/7 AI voice agent.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
