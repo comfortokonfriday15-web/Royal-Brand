@@ -80,79 +80,79 @@ const Properties = () => {
   });
 
   return (
-    <div className="pt-24 pb-24 px-6 bg-bg-light min-h-screen">
+    <div className="pt-24 pb-24 px-6 bg-bg-paper min-h-screen">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-12">
-          <h1 className="font-display text-4xl font-bold text-primary-blue mb-4">Property Listings</h1>
-          <p className="text-gray-500">Discover the best properties across Nigeria's prime locations.</p>
+        <div className="mb-12 text-center">
+          <h1 className="font-serif text-5xl md:text-6xl font-light text-primary-blue mb-4">Curated Collection</h1>
+          <p className="text-primary-teal font-medium tracking-widest uppercase text-xs">Exceptional Properties Across Nigeria</p>
         </div>
 
         {/* Filters */}
-        <div className="bg-white p-8 rounded-3xl shadow-sm mb-12 border border-gray-100">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-            <div className="flex items-center gap-2 text-primary-blue font-bold">
-              <Filter size={20} />
-              <span>Search & Filters</span>
+        <div className="bg-bg-card p-10 rounded-[2rem] shadow-sm mb-16 border border-border-subtle">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+            <div className="flex items-center gap-3 text-primary-blue font-serif text-2xl italic">
+              <Filter size={24} className="text-accent-gold" />
+              <span>Refine Search</span>
             </div>
             <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-primary-teal/40" size={18} />
               <input 
                 type="text"
-                placeholder="Search by name, location or description..."
+                placeholder="Search by name, location..."
                 value={filters.search}
                 onChange={(e) => setFilters({...filters, search: e.target.value})}
-                className="w-full bg-bg-light border border-gray-100 rounded-2xl pl-12 pr-4 py-3 text-sm focus:outline-none focus:border-primary-teal transition-all"
+                className="w-full bg-bg-paper/50 border border-border-subtle rounded-xl pl-12 pr-4 py-4 text-sm focus:outline-none focus:border-accent-gold transition-all font-sans"
               />
             </div>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
-            <div className="space-y-2">
-              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Area</label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8">
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold text-primary-teal uppercase tracking-[0.2em]">Area</label>
               <select 
                 value={filters.location}
                 onChange={(e) => setFilters({...filters, location: e.target.value})}
-                className="w-full bg-bg-light border border-gray-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary-teal"
+                className="w-full bg-bg-paper/30 border border-border-subtle rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent-gold appearance-none cursor-pointer font-sans"
               >
                 {areas.map(area => <option key={area} value={area}>{area}</option>)}
               </select>
             </div>
-            <div className="space-y-2">
-              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Type</label>
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold text-primary-teal uppercase tracking-[0.2em]">Type</label>
               <select 
                 value={filters.type}
                 onChange={(e) => setFilters({...filters, type: e.target.value})}
-                className="w-full bg-bg-light border border-gray-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary-teal"
+                className="w-full bg-bg-paper/30 border border-border-subtle rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent-gold appearance-none cursor-pointer font-sans"
               >
                 {types.map(type => <option key={type} value={type}>{type}</option>)}
               </select>
             </div>
-            <div className="space-y-2">
-              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Purpose</label>
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold text-primary-teal uppercase tracking-[0.2em]">Purpose</label>
               <select 
                 value={filters.purpose}
                 onChange={(e) => setFilters({...filters, purpose: e.target.value})}
-                className="w-full bg-bg-light border border-gray-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary-teal"
+                className="w-full bg-bg-paper/30 border border-border-subtle rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent-gold appearance-none cursor-pointer font-sans"
               >
                 {purposes.map(purpose => <option key={purpose} value={purpose}>{purpose}</option>)}
               </select>
             </div>
-            <div className="space-y-2">
-              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Price Range</label>
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold text-primary-teal uppercase tracking-[0.2em]">Price Range</label>
               <select 
                 value={filters.priceRange}
                 onChange={(e) => setFilters({...filters, priceRange: e.target.value})}
-                className="w-full bg-bg-light border border-gray-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary-teal"
+                className="w-full bg-bg-paper/30 border border-border-subtle rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent-gold appearance-none cursor-pointer font-sans"
               >
                 {priceRanges.map(range => <option key={range} value={range}>{range}</option>)}
               </select>
             </div>
-            <div className="space-y-2">
-              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Bedrooms</label>
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold text-primary-teal uppercase tracking-[0.2em]">Bedrooms</label>
               <select 
                 value={filters.beds}
                 onChange={(e) => setFilters({...filters, beds: e.target.value})}
-                className="w-full bg-bg-light border border-gray-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary-teal"
+                className="w-full bg-bg-paper/30 border border-border-subtle rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent-gold appearance-none cursor-pointer font-sans"
               >
                 {bedOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
               </select>
@@ -160,9 +160,9 @@ const Properties = () => {
             <div className="flex items-end">
               <button 
                 onClick={() => setFilters({search: '', location: 'All', type: 'All', purpose: 'All', priceRange: 'All', beds: 'All', baths: 'All'})}
-                className="w-full bg-primary-blue/5 text-primary-blue font-bold py-3 rounded-xl hover:bg-primary-blue hover:text-white transition-all flex items-center justify-center gap-2"
+                className="w-full bg-primary-blue text-white font-bold py-4 rounded-xl hover:bg-accent-gold transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary-blue/10 font-sans text-xs uppercase tracking-widest"
               >
-                <X size={16} />
+                <X size={14} />
                 <span>Reset</span>
               </button>
             </div>
@@ -170,23 +170,23 @@ const Properties = () => {
         </div>
 
         {/* Results */}
-        <div className="mb-8 flex justify-between items-center">
-          <p className="text-gray-500 text-sm">Showing <span className="font-bold text-primary-blue">{filteredProperties.length}</span> properties</p>
+        <div className="mb-10 flex justify-between items-center border-b border-border-subtle pb-6">
+          <p className="text-primary-teal font-serif italic text-lg">Showing <span className="font-bold text-primary-blue not-italic">{filteredProperties.length}</span> exquisite properties</p>
         </div>
 
         {filteredProperties.length > 0 ? (
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             {filteredProperties.map((property) => (
               <PropertyCard key={property.id} property={property} />
             ))}
           </div>
         ) : (
-          <div className="text-center py-24 bg-white rounded-3xl border border-dashed border-gray-200">
-            <div className="w-16 h-16 bg-gray-50 text-gray-300 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Search size={32} />
+          <div className="text-center py-32 bg-bg-card rounded-[3rem] border border-dashed border-border-subtle">
+            <div className="w-20 h-20 bg-bg-paper text-accent-gold rounded-full flex items-center justify-center mx-auto mb-6">
+              <Search size={36} />
             </div>
-            <h3 className="text-xl font-bold text-primary-blue mb-2">No properties found</h3>
-            <p className="text-gray-400">Try adjusting your filters to find what you're looking for.</p>
+            <h3 className="font-serif text-3xl text-primary-blue mb-3">No matches found</h3>
+            <p className="text-primary-teal/60 font-sans">Perhaps try adjusting your criteria to find your perfect estate.</p>
           </div>
         )}
       </div>

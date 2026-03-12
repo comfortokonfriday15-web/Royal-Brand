@@ -26,24 +26,24 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled || !isHome ? 'bg-white/95 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled || !isHome ? 'bg-bg-card/90 backdrop-blur-xl shadow-sm py-4 border-b border-border-subtle' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <Link to="/" className={`font-display font-bold text-2xl tracking-tight ${scrolled || !isHome ? 'text-primary-blue' : 'text-white'}`}>
-            Smart Realty
+          <Link to="/" className={`font-serif font-light text-3xl tracking-tight ${scrolled || !isHome ? 'text-primary-blue' : 'text-white'}`}>
+            Smart <span className="italic text-accent-gold">Realty</span>
           </Link>
           
           {/* Desktop Nav */}
-          <div className={`hidden md:flex items-center space-x-8 text-sm font-semibold ${scrolled || !isHome ? 'text-text-dark' : 'text-white/90'}`}>
-            <Link to="/" className="hover:text-primary-teal transition-colors">Home</Link>
-            <Link to="/properties" className="hover:text-primary-teal transition-colors">Properties</Link>
-            <Link to="/about" className="hover:text-primary-teal transition-colors">About</Link>
-            <Link to="/contact" className="hover:text-primary-teal transition-colors">Contact</Link>
+          <div className={`hidden md:flex items-center space-x-12 text-[10px] font-bold uppercase tracking-[0.2em] ${scrolled || !isHome ? 'text-primary-blue' : 'text-white/90'}`}>
+            <Link to="/" className="hover:text-accent-gold transition-colors">Home</Link>
+            <Link to="/properties" className="hover:text-accent-gold transition-colors">Properties</Link>
+            <Link to="/about" className="hover:text-accent-gold transition-colors">About</Link>
+            <Link to="/contact" className="hover:text-accent-gold transition-colors">Contact</Link>
             <button 
               onClick={() => setShowBookingModal(true)}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-full transition-all font-bold ${scrolled || !isHome ? 'bg-primary-blue text-white hover:bg-primary-teal' : 'bg-white text-primary-blue hover:bg-primary-teal hover:text-white'}`}
+              className={`flex items-center gap-3 px-8 py-3 rounded-full transition-all duration-500 shadow-xl ${scrolled || !isHome ? 'bg-primary-blue text-white hover:bg-accent-gold shadow-primary-blue/10' : 'bg-white text-primary-blue hover:bg-accent-gold hover:text-white shadow-white/10'}`}
             >
-              <Calendar size={16} />
-              <span>Book Appointment</span>
+              <Calendar size={14} />
+              <span>Book Consultation</span>
             </button>
           </div>
 
@@ -65,48 +65,65 @@ const Navbar = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative"
+              className="bg-bg-card rounded-[3rem] p-12 max-w-xl w-full shadow-2xl relative border border-border-subtle"
               onClick={e => e.stopPropagation()}
             >
               <button 
                 onClick={() => setShowBookingModal(false)}
-                className="absolute top-6 right-6 text-gray-400 hover:text-gray-600"
+                className="absolute top-8 right-8 text-primary-teal hover:text-accent-gold transition-colors"
               >
                 <X size={24} />
               </button>
               
-              <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-primary-teal/10 text-primary-teal rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="text-center mb-12">
+                <div className="w-20 h-20 bg-bg-paper text-accent-gold rounded-full flex items-center justify-center mx-auto mb-6 border border-border-subtle">
                   <Calendar size={32} />
                 </div>
-                <h3 className="font-display text-2xl text-primary-blue font-bold">Book an Appointment</h3>
-                <p className="text-gray-500 text-sm mt-2">
-                  Schedule a consultation with Chidi Eze to discuss your real estate needs.
+                <h3 className="font-serif text-3xl text-primary-blue font-light">Book a <span className="italic">Consultation</span></h3>
+                <p className="text-text-muted text-sm mt-4 font-sans leading-relaxed">
+                  Schedule a private session with our lead consultant to explore exclusive opportunities.
                 </p>
               </div>
 
-              <form className="space-y-4">
-                <input type="text" placeholder="Full Name" className="w-full bg-bg-light border border-gray-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary-teal" />
-                <input type="email" placeholder="Email Address" className="w-full bg-bg-light border border-gray-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary-teal" />
-                <div className="grid grid-cols-2 gap-4">
-                  <input type="date" className="w-full bg-bg-light border border-gray-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary-teal" />
-                  <select className="w-full bg-bg-light border border-gray-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary-teal">
-                    <option>Morning</option>
-                    <option>Afternoon</option>
-                    <option>Evening</option>
-                  </select>
+              <form className="space-y-6">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-primary-teal uppercase tracking-[0.2em]">Full Name</label>
+                    <input type="text" className="w-full bg-bg-paper/50 border-b border-border-subtle py-3 focus:outline-none focus:border-accent-gold transition-all font-sans" placeholder="John Doe" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-primary-teal uppercase tracking-[0.2em]">Email Address</label>
+                    <input type="email" className="w-full bg-bg-paper/50 border-b border-border-subtle py-3 focus:outline-none focus:border-accent-gold transition-all font-sans" placeholder="john@example.com" />
+                  </div>
                 </div>
-                <textarea placeholder="Tell us more about your interest..." rows={3} className="w-full bg-bg-light border border-gray-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary-teal resize-none"></textarea>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-primary-teal uppercase tracking-[0.2em]">Preferred Date</label>
+                    <input type="date" className="w-full bg-bg-paper/50 border-b border-border-subtle py-3 focus:outline-none focus:border-accent-gold transition-all font-sans" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-primary-teal uppercase tracking-[0.2em]">Time of Day</label>
+                    <select className="w-full bg-bg-paper/50 border-b border-border-subtle py-3 focus:outline-none focus:border-accent-gold transition-all font-sans appearance-none">
+                      <option>Morning (9am - 12pm)</option>
+                      <option>Afternoon (12pm - 4pm)</option>
+                      <option>Evening (4pm - 7pm)</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold text-primary-teal uppercase tracking-[0.2em]">Interest</label>
+                  <textarea rows={2} className="w-full bg-bg-paper/50 border-b border-border-subtle py-3 focus:outline-none focus:border-accent-gold transition-all font-sans resize-none" placeholder="Briefly describe your requirements..."></textarea>
+                </div>
                 
-                <button className="w-full bg-primary-blue text-white font-bold py-4 rounded-xl hover:bg-primary-teal transition-all shadow-lg shadow-primary-blue/20">
-                  Confirm Booking
+                <button className="w-full bg-primary-blue text-white font-bold py-5 rounded-2xl hover:bg-accent-gold transition-all shadow-xl shadow-primary-blue/10 uppercase tracking-widest text-xs">
+                  Confirm Consultation
                 </button>
               </form>
 
-              <div className="mt-6 pt-6 border-t border-gray-50 flex justify-center gap-6">
-                <button className="text-gray-400 hover:text-primary-teal transition-colors"><Phone size={20} /></button>
-                <button className="text-gray-400 hover:text-primary-teal transition-colors"><Mail size={20} /></button>
-                <button className="text-gray-400 hover:text-primary-teal transition-colors"><MessageCircle size={20} /></button>
+              <div className="mt-10 pt-10 border-t border-border-subtle flex justify-center gap-10">
+                <button className="text-primary-teal hover:text-accent-gold transition-colors"><Phone size={20} /></button>
+                <button className="text-primary-teal hover:text-accent-gold transition-colors"><Mail size={20} /></button>
+                <button className="text-primary-teal hover:text-accent-gold transition-colors"><MessageCircle size={20} /></button>
               </div>
             </motion.div>
           </div>
