@@ -1,7 +1,7 @@
 export const SITE_DATA = {
   agentName: "Smart Realty Assistant",
   agentPersonality: "Professional, trustworthy, and knowledgeable about the Nigerian real estate market. You are a helpful assistant who knows Chidi Eze and the local market in Lagos and Abuja intimately. If asked something outside your knowledge, politely offer to connect the user with Chidi directly.",
-  
+
   profile: {
     name: "Chidi Eze",
     title: "Lead Real Estate Consultant",
@@ -44,7 +44,7 @@ export const SITE_DATA = {
         sqft: "450",
         lot: "Standard"
       },
-      image: "https://picsum.photos/seed/lekki/1200/800"
+      image: "/Image_fx.png"
     },
     {
       id: "prop-2",
@@ -53,7 +53,7 @@ export const SITE_DATA = {
       type: "Apartment",
       purpose: "For Sale",
       price: "₦85,000,000",
-      image: "https://picsum.photos/seed/vi/800/600"
+      image: "/Image_fx (1).png"
     },
     {
       id: "prop-3",
@@ -62,7 +62,7 @@ export const SITE_DATA = {
       type: "Land",
       purpose: "For Sale",
       price: "₦50,000,000",
-      image: "https://picsum.photos/seed/land/800/600"
+      image: "/Image_fx (2).png"
     },
     {
       id: "prop-4",
@@ -71,7 +71,7 @@ export const SITE_DATA = {
       type: "Flat",
       purpose: "For Rent",
       price: "₦4,500,000/year",
-      image: "https://picsum.photos/seed/ikeja/800/600"
+      image: "/Image_fx (3).png"
     },
     {
       id: "prop-5",
@@ -80,7 +80,7 @@ export const SITE_DATA = {
       type: "Mansion",
       purpose: "For Sale",
       price: "₦350,000,000",
-      image: "https://picsum.photos/seed/banana/800/600"
+      image: "/Image_fx.png"
     },
     {
       id: "prop-6",
@@ -89,26 +89,26 @@ export const SITE_DATA = {
       type: "Apartment",
       purpose: "Shortlet",
       price: "₦150,000/night",
-      image: "https://picsum.photos/seed/ikoyi/800/600"
+      image: "/Image_fx (1).png"
     }
   ],
 
   testimonials: [
-    { 
-      name: "Amara N.", 
-      text: "The team made buying my first home stress-free! Their knowledge of the Lekki market is unmatched.", 
+    {
+      name: "Amara N.",
+      text: "The team made buying my first home stress-free! Their knowledge of the Lekki market is unmatched.",
       location: "Lekki",
       image: "https://picsum.photos/seed/amara/200/200"
     },
-    { 
-      name: "Tunde B.", 
-      text: "Found the perfect office space for my startup in one week. Professional and extremely efficient.", 
+    {
+      name: "Tunde B.",
+      text: "Found the perfect office space for my startup in one week. Professional and extremely efficient.",
       location: "Ikeja",
       image: "https://picsum.photos/seed/tunde/200/200"
     },
-    { 
-      name: "Funke A.", 
-      text: "Professional and transparent. They helped me secure a prime investment property in Abuja with zero hassle.", 
+    {
+      name: "Funke A.",
+      text: "Professional and transparent. They helped me secure a prime investment property in Abuja with zero hassle.",
       location: "Abuja",
       image: "https://picsum.photos/seed/funke/200/200"
     }
