@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Poppins", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-display: "Montserrat", sans-serif;
 
-  --color-bg-cream: #F9F9F7;
-  --color-text-primary: #2C2C2C;
-  --color-accent-gold: #C6A15B;
-  --color-accent-charcoal: #4A4A4A;
+  --color-primary-blue: #0A2647;
+  --color-primary-teal: #1B9C85;
+  --color-accent-gold: #F2AF29;
+  --color-bg-light: #F5F5F5;
+  --color-text-dark: #333333;
   --color-border-gray: #E0E0E0;
 }

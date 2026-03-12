@@ -1,7 +1,5 @@
 {
-  "name": "Robyn Brand Real Estate",
-  "description": "Luxury real estate landing page for Robyn Brand with 24/7 AI voice agent.",
-  "requestFramePermissions": [
-    "microphone"
-  ]
+  "name": "Smart Realty",
+  "description": "A professional real estate website for Nigerian agents featuring property listings, appointment booking, and WhatsApp integration.",
+  "requestFramePermissions": []
 }
