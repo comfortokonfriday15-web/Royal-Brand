@@ -1,5 +1,6 @@
 {
   "name": "Smart Realty",
   "description": "A professional real estate website for Nigerian agents featuring property listings, appointment booking, and WhatsApp integration.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -44,7 +44,7 @@ const About = () => {
             >
               <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white">
                 <img 
-                  src="https://picsum.photos/seed/chidi/800/1000" 
+                  src="https://github.com/comfortokonfriday15-web/Royal-Brand/raw/d189000a166bfe3304a4caa2a1d65daf3c40e872/Image_fx.png" 
                   alt="Chidi Eze" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -109,18 +109,18 @@ const About = () => {
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6 pt-12">
                 <div className="aspect-square rounded-[2rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                  <img src="https://picsum.photos/seed/luxury1/600/600" alt="Luxury" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  <img src="https://github.com/comfortokonfriday15-web/Royal-Brand/raw/d189000a166bfe3304a4caa2a1d65daf3c40e872/Image_fx%20(1).png" alt="Luxury" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
                 <div className="aspect-[3/4] rounded-[2rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                  <img src="https://picsum.photos/seed/luxury2/600/800" alt="Luxury" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  <img src="https://github.com/comfortokonfriday15-web/Royal-Brand/raw/d189000a166bfe3304a4caa2a1d65daf3c40e872/Image_fx%20(2).png" alt="Luxury" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
               </div>
               <div className="space-y-6">
                 <div className="aspect-[3/4] rounded-[2rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                  <img src="https://picsum.photos/seed/luxury3/600/800" alt="Luxury" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  <img src="https://github.com/comfortokonfriday15-web/Royal-Brand/raw/d189000a166bfe3304a4caa2a1d65daf3c40e872/Image_fx%20(3).png" alt="Luxury" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
                 <div className="aspect-square rounded-[2rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                  <img src="https://picsum.photos/seed/luxury4/600/600" alt="Luxury" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  <img src="https://github.com/comfortokonfriday15-web/Royal-Brand/raw/d189000a166bfe3304a4caa2a1d65daf3c40e872/Image_fx.png" alt="Luxury" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
               </div>
             </div>

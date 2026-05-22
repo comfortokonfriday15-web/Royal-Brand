@@ -19,3 +19,8 @@
   --color-text-muted-alt: #4A4A4A;
   --color-border-subtle: rgba(26, 26, 26, 0.1);
 }
+
+body {
+  background-color: #1A1A1A;
+  color: #1A1A1A;
+}

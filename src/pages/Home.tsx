@@ -4,9 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowRight, MapPin, Search, MessageCircle, Star, Calendar, Phone } from 'lucide-react';
 import { SITE_DATA } from '../data';
 import PropertyCard from '../components/PropertyCard';
+import { AIReceptionistChat } from '../components/AIReceptionistChat';
 
 const Home = () => {
   const navigate = useNavigate();
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const [heroFilters, setHeroFilters] = useState({
     location: 'All',
     type: 'All',
@@ -33,7 +35,7 @@ const Home = () => {
   };
 
   const handleWhatsApp = (propertyName?: string) => {
-    const message = propertyName
+    const message = propertyName 
       ? `Hello, I'm interested in ${propertyName}`
       : "Hello, I'm interested in your real estate services.";
     window.open(`https://wa.me/2348000000000?text=${encodeURIComponent(message)}`, '_blank');
@@ -44,18 +46,22 @@ const Home = () => {
   };
 
   return (
-    <div className="pt-0 bg-bg-paper">
+    <div className="pt-0 bg-primary-blue">
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-primary-blue">
         <div className="absolute inset-0 z-0">
-          <img
-            src="/hero-house.png"
-            alt="Lagos Skyline"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-primary-blue/70" />
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="w-full h-full object-cover opacity-60"
+          >
+            <source src="https://github.com/comfortokonfriday15-web/Royal-Brand/raw/e65f34f138aadb15879650c68c9e1d17f7e8ee5a/SaveClip.App_AQMOKK5b7K7vVnhUo7Zt4LtFrmlZLAaduzy4fJ6wDiPU84VdJEoRy-AIhX6WPeQ5gshihS-TDacKghBHgi69or8kWn9OfUAZ4va-Vyg.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-primary-blue/40" />
         </div>
-
+        
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -68,7 +74,7 @@ const Home = () => {
               <span className="italic">Perfect Estate</span>
             </h1>
           </motion.div>
-
+          
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,9 +83,9 @@ const Home = () => {
           >
             Curating Nigeria's most exclusive residential and investment opportunities with absolute discretion.
           </motion.p>
-
+          
           {/* Search Bar */}
-          <motion.div
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -89,42 +95,42 @@ const Home = () => {
               <span className="text-[10px] font-bold text-primary-teal uppercase tracking-[0.2em] mb-2 flex items-center gap-2">
                 <MapPin size={12} /> Area
               </span>
-              <select
+              <select 
                 value={heroFilters.location}
-                onChange={(e) => setHeroFilters({ ...heroFilters, location: e.target.value })}
+                onChange={(e) => setHeroFilters({...heroFilters, location: e.target.value})}
                 className="bg-transparent w-full focus:outline-none text-sm font-bold text-primary-blue appearance-none cursor-pointer font-sans"
               >
                 {areas.map(area => <option key={area} value={area}>{area}</option>)}
               </select>
             </div>
-
+            
             <div className="flex-1 w-full px-6 flex flex-col items-start border-b md:border-b-0 md:border-r border-border-subtle pb-4 md:pb-0">
               <span className="text-[10px] font-bold text-primary-teal uppercase tracking-[0.2em] mb-2 flex items-center gap-2">
                 <Star size={12} /> Property Type
               </span>
-              <select
+              <select 
                 value={heroFilters.type}
-                onChange={(e) => setHeroFilters({ ...heroFilters, type: e.target.value })}
+                onChange={(e) => setHeroFilters({...heroFilters, type: e.target.value})}
                 className="bg-transparent w-full focus:outline-none text-sm font-bold text-primary-blue appearance-none cursor-pointer font-sans"
               >
                 {types.map(type => <option key={type} value={type}>{type}</option>)}
               </select>
             </div>
-
+            
             <div className="flex-1 w-full px-6 flex flex-col items-start">
               <span className="text-[10px] font-bold text-primary-teal uppercase tracking-[0.2em] mb-2 flex items-center gap-2">
                 <Search size={12} /> Price Range
               </span>
-              <select
+              <select 
                 value={heroFilters.priceRange}
-                onChange={(e) => setHeroFilters({ ...heroFilters, priceRange: e.target.value })}
+                onChange={(e) => setHeroFilters({...heroFilters, priceRange: e.target.value})}
                 className="bg-transparent w-full focus:outline-none text-sm font-bold text-primary-blue appearance-none cursor-pointer font-sans"
               >
                 {priceRanges.map(range => <option key={range} value={range}>{range}</option>)}
               </select>
             </div>
-
-            <button
+            
+            <button 
               onClick={handleSearch}
               className="bg-primary-blue text-white w-full md:w-auto px-12 py-5 rounded-full font-bold hover:bg-accent-gold transition-all transform hover:scale-105 flex items-center justify-center gap-3 shadow-xl shadow-primary-blue/20 uppercase tracking-widest text-xs"
             >
@@ -134,25 +140,25 @@ const Home = () => {
           </motion.div>
 
           {/* CTA Buttons */}
-          <motion.div
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
-            <button
+            <button 
               onClick={openCalendar}
               className="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-full font-bold hover:bg-white hover:text-primary-blue transition-all flex items-center justify-center gap-3 group uppercase tracking-widest text-xs"
             >
               <Calendar size={18} className="group-hover:scale-110 transition-transform" />
               <span>Book Consultation</span>
             </button>
-            <button
-              onClick={() => handleWhatsApp()}
+            <button 
+              onClick={() => setIsChatOpen(true)}
               className="w-full sm:w-auto bg-primary-teal text-white px-10 py-5 rounded-full font-bold hover:opacity-90 transition-all flex items-center justify-center gap-3 shadow-xl shadow-primary-teal/20 group uppercase tracking-widest text-xs"
             >
               <MessageCircle size={18} className="group-hover:scale-110 transition-transform" />
-              <span>Private Inquiry</span>
+              <span>Talk to Support</span>
             </button>
           </motion.div>
         </div>
@@ -167,7 +173,7 @@ const Home = () => {
               <h2 className="font-playfair text-5xl font-light text-text-dark-alt mb-4">Featured Property</h2>
               <p className="text-primary-teal/60 font-sans italic">Handpicked luxury listings in prime locations.</p>
             </div>
-            <button
+            <button 
               onClick={() => navigate('/properties')}
               className="text-accent-gold-alt font-bold flex items-center gap-3 hover:gap-5 transition-all mt-6 md:mt-0 uppercase tracking-widest text-xs border border-accent-gold-alt px-8 py-4 rounded-full"
             >
@@ -188,7 +194,7 @@ const Home = () => {
         <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]" />
         </div>
-
+        
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-24">
             <p className="text-accent-gold font-medium tracking-[0.3em] uppercase text-[10px] mb-6">Our Expertise</p>
@@ -235,7 +241,7 @@ const Home = () => {
             <p className="text-primary-teal font-medium tracking-[0.3em] uppercase text-[10px] mb-6">The Smart Advantage</p>
             <h2 className="font-serif text-5xl font-light text-primary-blue mb-6">Why Discerning Clients <span className="italic">Choose Us</span></h2>
           </div>
-
+          
           <div className="grid md:grid-cols-4 gap-10">
             {SITE_DATA.profile.whyWorkWith.map((item, index) => (
               <div key={index} className="bg-bg-card p-10 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-500 border border-border-subtle group">
@@ -258,18 +264,18 @@ const Home = () => {
           <div className="absolute top-10 left-10 w-96 h-96 border border-white rounded-full" />
           <div className="absolute bottom-10 right-10 w-[30rem] h-[30rem] border border-white rounded-full" />
         </div>
-
+        
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-24">
             <p className="text-accent-gold font-medium tracking-[0.3em] uppercase text-[10px] mb-6">Client Stories</p>
             <h2 className="font-serif text-5xl md:text-6xl font-light mb-8 leading-tight">Trusted by <span className="italic">Visionaries</span></h2>
             <p className="text-white/40 max-w-2xl mx-auto font-sans font-light text-lg">Real experiences from those who found their sanctuary with us.</p>
           </div>
-
+          
           <div className="grid md:grid-cols-3 gap-12">
             {SITE_DATA.testimonials.map((t, i) => (
-              <motion.div
-                key={i}
+              <motion.div 
+                key={i} 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -279,16 +285,16 @@ const Home = () => {
                 <div className="flex gap-1 text-accent-gold mb-10">
                   {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
                 </div>
-
+                
                 <p className="font-serif text-2xl italic mb-12 leading-relaxed text-white/90 flex-grow">
                   "{t.text}"
                 </p>
-
+                
                 <div className="flex items-center gap-6 pt-10 border-t border-white/10">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-accent-gold shadow-2xl group-hover:scale-110 transition-transform duration-700">
-                    <img
-                      src={t.image}
-                      alt={t.name}
+                    <img 
+                      src={t.image} 
+                      alt={t.name} 
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
                     />
@@ -309,16 +315,16 @@ const Home = () => {
         <div className="max-w-5xl mx-auto bg-primary-blue rounded-[4rem] p-16 md:p-24 shadow-2xl relative overflow-hidden text-center">
           <div className="absolute top-0 right-0 w-96 h-96 bg-accent-gold/5 rounded-full -mr-48 -mt-48" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-teal/5 rounded-full -ml-48 -mb-48" />
-
+          
           <div className="relative z-10">
             <p className="text-accent-gold font-medium tracking-[0.3em] uppercase text-[10px] mb-8">The Insider</p>
             <h2 className="font-serif text-4xl md:text-6xl font-light text-white mb-8 leading-tight">Stay Ahead of the <span className="italic">Market</span></h2>
             <p className="text-white/40 mb-12 max-w-xl mx-auto font-sans font-light text-lg">Receive exclusive off-market listings and curated property insights directly to your inbox.</p>
-
+            
             <form className="flex flex-col md:flex-row gap-6 max-w-lg mx-auto">
-              <input
-                type="email"
-                placeholder="Email Address"
+              <input 
+                type="email" 
+                placeholder="Email Address" 
                 className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-8 py-5 text-white focus:outline-none focus:border-accent-gold transition-all font-sans"
                 required
               />
@@ -330,6 +336,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* AI Receptionist Chat Drawer */}
+      <AIReceptionistChat isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </div>
   );
 };
